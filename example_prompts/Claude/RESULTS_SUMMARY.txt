@@ -1,0 +1,61 @@
+
+DICTIONARY LEARNING RESULTS SUMMARY
+=====================================
+Generated: 2026-02-05 15:51:26
+
+DATASET INFORMATION
+-------------------
+- Total images processed: 300
+- Image dimensions: 256x256 pixels
+- Total patches extracted: 15000
+- Patch size: 16x16 pixels
+
+DICTIONARY LEARNING PARAMETERS
+-------------------------------
+- Number of dictionary atoms: 100
+- Sparsity parameter (alpha): 1.0
+- Number of iterations: 100
+- Batch size: 200
+- Algorithm: LARS (Least Angle Regression)
+
+RESULTS
+-------
+- Dictionary shape: (100, 256)
+- Sparse codes computed: 1000 patches
+- Mean sparsity: 2.58% non-zero coefficients
+- Median sparsity: 2.00%
+- Mean reconstruction error (MSE): 0.007608
+
+INTERPRETATION
+--------------
+The dictionary learning algorithm has learned 100 basis functions (atoms)
+that can represent image patches as sparse linear combinations. Each patch is 
+represented using only 2.6% of the available atoms on average,
+demonstrating effective sparse representation.
+
+The learned dictionary atoms capture local image features such as edges, textures,
+and patterns that frequently appear in the dataset. These atoms can be used for:
+- Image compression (sparse representation uses fewer coefficients)
+- Feature extraction for classification tasks
+- Image denoising and inpainting
+- Understanding the structure of natural images
+
+FILES GENERATED
+---------------
+1. 01_dictionary_atoms.png - Visualization of all 100 learned basis functions
+2. 02_reconstruction_comparison.png - Original vs reconstructed patches
+3. 03_sparse_codes_examples.png - Bar plots of sparse coefficients
+4. 04_sparsity_histogram.png - Distribution of sparsity across patches
+5. dictionary.npy - Learned dictionary matrix ((100, 256))
+6. sparse_codes_sample.npy - Sparse codes for sample patches ((1000, 100))
+7. reconstructed_patches.npy - Reconstructed patches
+8. original_patches_sample.npy - Original sample patches
+9. dict_learning_model.pkl - Trained scikit-learn model
+10. RESULTS_SUMMARY.txt - This summary report
+
+NEXT STEPS
+----------
+- Load dictionary.npy to use the learned atoms for new data
+- Use dict_learning_model.pkl to transform new patches
+- Experiment with different alpha values for more/less sparsity
+- Try different numbers of dictionary atoms
