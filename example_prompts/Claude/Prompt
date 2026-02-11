@@ -1,2 +1,0 @@
-I want you to write a python code using the skit-learn api dictionary learning doing the ollowing: 1) import a dataset of images: suggest me a dataset easily available (not Olivetti) and containing about hundreds of images of about 256x256 pixels aprox. (might be other size but not small). Do not do any resize, but you can create patches of for example 16x16 to simplify 2) learn a sparse dictionary and a sparse representation with the mentioned api 3) comment what you are doing
-4) Give in a folder all the items you generated with this activity (with an explanation itself)
